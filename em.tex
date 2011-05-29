@@ -74,127 +74,243 @@
 \begin{document}
 
 \section{Уравнение Максвелла и преобразования Галилея.}
-\label{sec:maxwell_galileo}
+% \label{sec:maxwell_galileo}
 
-\subsection{Галилеевски–инвариантные уравнения Максвелла.}
-\label{sec:maxwell_inv_gal}
+% \subsection{Галилеевски–инвариантные уравнения Максвелла.}
+% \label{sec:maxwell_inv_gal}
 
-Рассмотрим такую систему уравнений: 
+% Рассмотрим такую систему уравнений: 
+
+% \begin{eqnarray}
+%   \label{eq:maxwell_cut}
+%   \div \vec{E} &=& \rho,\\
+%   \rot \vec{E} &=& 0,\\
+%   \div \vec{B} &=& 0,\\
+%   \rot \vec{B} &=& \vec{j} + \frac{\pt \vec{E}}{\pt t}.
+% \end{eqnarray}
+
+% Видно, что от обычных уравнений Максвелла они отличаются только
+% отсутствием закона Фарадея (в наших обозначениях это должно быть
+% слагаемое $-1/c^2 \pt \vec{B} / \pt t$ в правой части второго
+% уравнения). 
+
+% Из этих уравнений можно увидеть закон сохранения заряда, применив
+% дивергенцию к последнему уравнению. Получится: 
+
+% \begin{equation}
+%   \label{eq:conserv_charge}
+%   \frac{\pt \rho}{\pt t} + \div \vec{j} =0.
+% \end{equation}
+
+% То есть, это самосогласованные уравнения, даже при том, что источники
+% зависят от времени. Кроме того, это уравнения, инвариантные
+% относительно преобразований Галилея. Действительно, сделаем
+% преобразование
+
+% \begin{equation}
+%   \label{eq:galileo_transf}
+%   \vec{r}' = \vec{r} + \vec{v} t, \quad t'=t.
+% \end{equation}
+
+% Что произойдёт при этом с операторами? Вот что: 
+
+% \begin{equation}
+%   \label{eq:operators_transf}
+%   \vn ' = \vn, \quad \frac{\pt}{\pt t'} = \frac{\pt}{\pt t} -
+%   \vec{v}\cdot \vn.
+% \end{equation}
+
+% Плотность заряда останется неизменной (это же скаляр), а вот вектор
+% тока преобразуется: 
+
+% \begin{equation}
+%   \label{eq:sources_transf}
+%   \rho' (\vec{r'},t') = \rho (\vec{r},t), \quad \vec{j}' (\vec{r}',t')
+%   = \vec{j} (\vec{r},t) + \rho(\vec{r},t) \vec{v}.
+% \end{equation}
+
+% Проверим, что если поля преобразуются вот так
+
+% \begin{equation}
+%   \label{eq:fields_transf}
+%   \vec{E}' = \vec{E}, \quad \vec{B}' = \vec{B} + \vec{v} \times \vec{E},
+% \end{equation}
+% то уравнения Максвелла инвариантны. Заметим попутно, что последнее
+% соотношение означает, что даже если в начальной СО магнитное поле
+% отсутствовало ($\vec{B}=0$), то в новой СО оно появится. 
+
+% В самом деле, во-первых, заметим, что 
+% \begin{equation}
+%   \label{eq:two_maxwell}
+%   \div \vec{E}' = \rho, \quad \rot \vec{E}' =0. 
+% \end{equation}
+
+% Что касается остальных двух уравнений, то нужно вспомнить два таких
+% тождества: 
+
+% \begin{eqnarray}
+%   \label{eq:two_identities}
+% \nn
+%   \div (\vec{a} \times \vec{b}) &=& \vec{b} \cdot \rot \vec{a} -
+%   \vec{a} \cdot \rot \vec{b},\\
+% \rot (\vec{a} \times \vec{b}) &=& \vec{a} \cdot \div \vec{b} - \vec{b}
+% \cdot \div \vec{a} + (\vec{b} \cdot \vn)\vec{a} - (\vec{a}\cdot \vn)\vec{b}.
+% \end{eqnarray}
+
+% С их помощью получается, что
+
+% \begin{equation}
+%   \div \vec{B}'	= \div(\vec{B}+\vec{v}\times \vec{E}) = \div \vec{B} -
+%   \vec{v} \cdot \rot \vec{E} = \div \vec{B}.
+% \end{equation}
+
+% А также
+
+% \begin{equation}
+%   \rot \vec{B}' = \rot (\vec{B} + \vec{v} \times \vec{E}) = \rot
+%   \vec{B} + \vec{v} \cdot \div \vec{E} - (\vec{v}\cdot\vn)\vec{E} =
+%   \rot \vec{B} +  \rho \vec{v}  - (\vec{v} \cdot \vn) \vec{E}.
+% \end{equation}
+
+% Вспомним теперь соотношение для вектора тока $\vec{j}$
+% \eqref{eq:sources_transf}. Видно, что с их помощью, а также с помощью
+% \eqref{eq:operators_transf}, последнее уравнение можно переписать как
+
+% \begin{equation}
+%   \rot \vec{B}'	= \vec{j}' + \frac{\pt \vec{E}'}{\pt t'}.
+% \end{equation}
+
+% Таким образом, мы получили, что все «уравнения Максвелла» остаются
+% инвариантными при преобразованиях Галилея. То есть, закон индукции
+% Фарадея — чисто релятивистский эффект. 
+
+% Отметим, кстати, забавное свойство, которое следует из всего
+% предыдущего: 
+
+% \begin{equation}
+%   \label{eq:pt_B}
+%   \frac{\pt \vec{B}}{\pt t} = \vn \times (\vec{v} \times \vec{B}).
+% \end{equation}
+
+
+\subsection{Два тождества векторного анализа.}
+\label{sec:vector_identities}
 
 \begin{eqnarray}
-  \label{eq:maxwell_cut}
-  \div \vec{E} &=& \rho,\\
-  \rot \vec{E} &=& 0,\\
-  \div \vec{B} &=& 0,\\
-  \rot \vec{B} &=& \vec{j} + \pt \vec{E} / \pt t.
+  \label{eq:two_identities_1}
+  \vn \cdot (\vec{a} \times \vec{b}) &=& \vec{b} \cdot ( \vn \times \vec{a}) -
+  \vec{a} \cdot (\vn \times \vec{b}),\\
+  \label{eq:two_identities_2}
+\vn \times (\vec{a} \times \vec{b}) &=& \vec{a} \cdot (\vn \cdot \vec{b}) - \vec{b}
+\cdot (\vn \cdot \vec{a}) + (\vec{b} \cdot \vn)\vec{a} - (\vec{a}\cdot \vn)\vec{b}.
 \end{eqnarray}
 
-Видно, что от обычных уравнений Максвелла они отличаются только
-отсутствием закона Фарадея (в наших обозначениях это должно быть
-слагаемое $-1/c^2 \pt \vec{B} / \pt t$ в правой части второго
-уравнения). 
 
-Из этих уравнений можно увидеть закон сохранения заряда, применив
-дивергенцию к последнему уравнению. Получится: 
+\subsection{Уравнения Максвелла из электростатики.}
+\label{sec:maxwell_statics}
 
-\begin{equation}
-  \label{eq:conserv_charge}
-  \frac{\pt \rho}{\pt t} + \div \vec{j} =0.
-\end{equation}
-
-То есть, это самосогласованные уравнения, даже при том, что источники
-зависят от времени. Кроме того, это уравнения, инвариантные
-относительно преобразований Галилея. Действительно, сделаем
-преобразование
-
-\begin{equation}
-  \label{eq:galileo_transf}
-  \vec{r}' = \vec{r} + \vec{v} t, \quad t'=t.
-\end{equation}
-
-Что произойдёт при этом с операторами? Вот что: 
-
-\begin{equation}
-  \label{eq:operators_transf}
-  \vn ' = \vn, \quad \frac{\pt}{\pt t'} = \frac{\pt}{\pt t} -
-  \vec{v}\cdot \vn.
-\end{equation}
-
-Плотность заряда останется неизменной (это же скаляр), а вот вектор
-тока преобразуется: 
-
-\begin{equation}
-  \label{eq:sources_transf}
-  \rho' (\vec{r'},t') = \rho (\vec{r},t), \quad \vec{j}' (\vec{r}',t')
-  = \vec{j} (\vec{r},t) + \rho(\vec{r},t) \vec{v}.
-\end{equation}
-
-Проверим, что если поля преобразуются вот так
-
-\begin{equation}
-  \label{eq:fields_transf}
-  \vec{E}' = \vec{E}, \quad \vec{B}' = \vec{B} + \vec{v} \times \vec{E},
-\end{equation}
-то уравнения Максвелла инвариантны. 
-
-В самом деле, во-первых, заметим, что 
-\begin{equation}
-  \label{eq:two_maxwell}
-  \div \vec{E}' = \rho, \quad \rot \vec{E}' =0. 
-\end{equation}
-
-Что касается остальных двух уравнений, то нужно вспомнить два таких
-тождества: 
+Начнём со статических уравнений Максвелла. 
 
 \begin{eqnarray}
-  \label{eq:two_identities}
-\nn
-  \div (\vec{a} \times \vec{b}) &=& \vec{b} \cdot \rot \vec{a} -
-  \vec{a} \cdot \rot \vec{b},\\
-\rot (\vec{a} \times \vec{b}) &=& \vec{a} \cdot \div \vec{b} - \vec{b}
-\cdot \div \vec{a} + (\vec{b} \cdot \vn)\vec{a} - (\vec{a}\cdot \vn)\vec{b}.
+  \label{eq:maxwell_statics}
+  \vn \cdot \vec{E} &=& \rho, \quad \frac{\pt \rho}{\pt t}=0,\\
+\vn \times \vec{E} &=& 0, \quad \frac{\pt \vec{E}}{\pt t}=0.
 \end{eqnarray}
 
-С их помощью получается, что
+Попробуем сделать их зависимыми от времени. Пусть все источники
+двигаются равномерно со скоростью $\vec{v}$. Есть альтернативная СО, в
+которой источники покоятся. Переход в эту СО осуществляется так: 
 
 \begin{equation}
-  \div \vec{B}'	= \div(\vec{B}+\vec{v}\times \vec{E}) = \div \vec{B} -
-  \vec{v} \cdot \rot \vec{E} = \div \vec{B}.
+  \label{eq:transf_galileo}
+  \frac{\pt}{\pt t} \to \frac{\pt}{\pt t'} = \frac{\pt}{\pt t} +
+  \left( \vec{v} \cdot \vn \right).
 \end{equation}
 
-А также
+Например, посмотрим, что происходит с зарядом. 
 
 \begin{equation}
-  \rot \vec{B}' = \rot (\vec{B} + \vec{v} \times \vec{E}) = \rot
-  \vec{B} + \vec{v} \cdot \div \vec{E} - (\vec{v}\cdot\vn)\vec{E} =
-  \rot \vec{B} +  \rho \vec{v}  - (\vec{v} \cdot \vn) \vec{E}.
+  \label{eq:transf_charge}
+  0 = \frac{\pt \rho}{\pt t} \to \frac{\pt \rho}{\pt t'} = \frac{\pt
+    \rho}{\pt t} + \left( \vec{v} \cdot \vn \right) \rho.
 \end{equation}
 
-Вспомним теперь соотношение для вектора тока $\vec{j}$
-\eqref{eq:sources_transf}. Видно, что с их помощью, а также с помощью
-\eqref{eq:operators_transf}, последнее уравнение можно переписать как
+Так как скорость постоянна, то это можно упростить: 
 
 \begin{equation}
-  \rot \vec{B}'	= \vec{j}' + \frac{\pt \vec{E}'}{\pt t'}.
+  \label{eq:charge_consrv}
+  \frac{\pt \rho}{\pt t} + \vn \left( \rho \vec{v} \right) =0 .
 \end{equation}
 
-Таким образом, мы получили, что все «уравнения Максвелла» остаются
-инвариантными при преобразованиях Галилея. То есть, закон индукции
-Фарадея — чисто релятивистский эффект. 
+Это — закон сохранения заряда (при этом $\vec{j} \equiv \rho \vec{v}$
+— вектор тока). 
 
-Отметим, кстати, забавное свойство, которое следует из всего
-предыдущего: 
+Аналогичное преобразование можно проделать с условием статичности
+$\vec{E}$:
 
 \begin{equation}
-  \label{eq:pt_B}
-  \frac{\pt \vec{B}}{\pt t} = \vn \times (\vec{v} \times \vec{B}).
+  \label{eq:E_field_transf}
+  0 = \frac{\pt \vec{E}}{\pt t} \to \frac{\pt \vec{E}}{\pt t'} =
+  \frac{\pt \vec{E}}{\pt t} + \left( \vec{v} \cdot \vn \right) \vec{E}.
 \end{equation}
+
+Теперь используем тождество \eqref{eq:two_identities_2} для упрощения
+втрого слагаемого. При этом надо помнить, что $\vec{v}$ постоянна.
+
+\begin{equation}
+  0 = \frac{\pt \vec{E}}{\pt t} + \vec{v} \cdot \div \vec{E} - \vn
+  \times \left( \vec{v} \times \vec{E} \right) = \frac{\pt
+    \vec{E}}{\pt t} + \vec{j} - \vn 
+  \times \left( \vec{v} \times \vec{E} \right).
+\end{equation}
+
+Можно ввести обозначение $\vec{B} \equiv \vec{v} \times \vec{E}$,
+тогда это уравнение приобретёт просто вид 4-го уравнения Максвелла: 
+
+\begin{equation}
+  \label{eq:maxwell_4}
+  \vn \times \vec{B} = \vec{j} + \frac{\pt \vec{E}}{\pt t}.
+\end{equation}
+
+Коль скоро у нас появился новый вектор, надо всё про него
+разузнать. Например, какая у него дивергения? 
+
+\begin{equation}
+  \label{eq:B_field_div}
+  \vn \cdot \vec{B} = \vn \times \left( \vec{v} \times \vec{E} \right)
+  = - \vec{v} \cdot \left( \vn \times \vec{E} \right)=0.
+\end{equation}
+
+Более того, можно узнать зависимость от времени. Тут надо вспомнить,
+что в движущейся СО заряды и поля не зависят от времени, так что
+
+\begin{equation}
+  \label{eq:B_field_pt_t}
+  0=\frac{\pt \vec{B}}{\pt t'} = \frac{\pt \vec{B}}{\pt t} + \left( \vec{v}
+    \cdot \vn \right) \vec{B}.
+\end{equation}
+Или, опять используя \eqref{eq:two_identities_2}, получаем
+\begin{equation}
+  \frac{\pt \vec{B}}{\pt t} = \vn \times \left( \vec{v} \times \vec{B} \right).
+\end{equation}
+
+Итак, что мы видим? Если заряды двигаются, то это приводит к факту
+появления дополнительного поля $\vec{B}$, которое выражается через ток
+и через производную электрического поля. Всё остальное почти не
+меняется (разве что у плотности повляется зависимость от времени). 
+
+А где же закон индукции Фарадея? Почему-то он не появился в нашем
+вычислении. Это связано с тем, что уравнения Максвелла без закона
+Фарадея инвариантны относительно преобразований Галилея, так что для
+его появления нужно привлечь экспериментальный факт — а именно,
+существование электромагнитных волн. Этот факт очевидным образом
+нарушает галилеевскую инвариантность. 
 
 \subsection{Электромагнитная волна и закон индукции.}
 \label{em_wave}
 
-Теперь потребуем, чтобы существовали электромагнитные волны. Такие
-волны обладают свойством 
+Потребуем, чтобы существовали электромагнитные волны. Такие волны
+обладают свойством
 
 \begin{equation}
   \vec{E} \sim f (x-ct).
@@ -217,21 +333,33 @@
 \end{equation}
 
 Правая же часть тоже преобразуется (помним о том, что $\vec{j}=0$, а
-также используем \eqref{eq:pt_B})\footnote{Здесь какие-то проблемы с $c$.}:
+также используем \eqref{eq:B_field_pt_t}):
 
 \begin{equation}
-  \frac{1}{c^2}  \frac{\pt^2\vec{E}}{\pt t^2} = \frac{1}{c}
-  \frac{\pt}{\pt t} \vn \times \vec{E} = \frac{1}{c} \vn \times \left[
-    \vn \times \left( \vec{v} \times \vec{B} \right) \right]
+  \frac{1}{c^2}  \frac{\pt^2\vec{E}}{\pt t^2} = \frac{1}{c^2}
+  \frac{\pt}{\pt t} \vn \times \vec{B} = \frac{1}{c^2} \vn \times \left[
+    \vn \times \left( \vec{v} \times \vec{B} \right) \right].
 \end{equation}
 
 Таким образом, волновое уравнение \eqref{eq:wave_equation} выполняется
 в том случае, если
 
 \begin{equation}
-  \vn \times \vec{E} = -\vn \times \left( \frac{\vec{v}}{c} \times
-    \vec{B} \right) = -\frac{1}{c} \frac{\pt \vec{B}}{\pt t}. 
+  \vn \times \vec{E} = -\vn \times \left( \frac{\vec{v}}{c^2} \times
+    \vec{B} \right) = -\frac{1}{c^2} \frac{\pt \vec{B}}{\pt t}. 
 \end{equation}
 
 Это — как раз нужный закон Фарадея. 
+
+В итоге, всё выглядит примерно так: 
+\begin{enumerate}
+\item Начинаем с электростатики;
+\item Переходим к движущимся электрическим зарядам;
+\item Видим, что для самосогласованности нужно новое поле $\vec{B}$;
+\item Получается 4-е уравнение Максвелла;
+\item Требуем, чтобы были электромагнитные волны;
+\item Получается 2-е уравнение Максвелла (закон Фарадея).
+\end{enumerate}
+
+
 \end{document}
