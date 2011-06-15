@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+% math symbols
+\usepackage{amssymb,amsmath}
+% for different compilers
+\usepackage{ifpdf}
+% geometry of page
+\usepackage[margin=2.1cm]{geometry}
+% float pictures
+\usepackage{wrapfig}
+
+% if pdflatex, then
+\ifpdf
+ \usepackage[english,russian]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[unicode]{hyperref}
+ \usepackage[pdftex]{graphicx}
+ \usepackage{cmlgc}
+% if xelatex, then
+\else
+% math fonts
+ \usepackage{fouriernc}
+% xelatex specific packages
+ \usepackage[xetex]{hyperref}
+ \usepackage{xunicode}	% some extra unicode support
+ \usepackage{xltxtra}	% \XeLaTeX macro
+ \defaultfontfeatures{Mapping=tex-text}
+ \usepackage{polyglossia}	% instead of babel in xelatex
+ \setdefaultlanguage{russian}
+% fonts
+ \setromanfont{Charis SIL}
+ \setsansfont{OfficinaSansC} 
+ \setmonofont{Consolas}
+\fi
+
+% several pictures in one figure
+\usepackage{subfig}
+% calc in TeX expressions
+\usepackage{calc}
+% nice pictures and plots
+\usepackage{pgfplots,tikz,circuitikz}
+% different libraries for pictures
+\usetikzlibrary{%
+  arrows,%
+  calc,%
+  patterns,%
+  decorations.pathreplacing,%
+  decorations.pathmorphing,%
+  decorations.markings%
+}
+\tikzset{>=latex}
+
+% colors of the hyperlinks
+\hypersetup{colorlinks,%
+  citecolor=blue,%
+  urlcolor=blue,%
+  linkcolor=red
+}
+
+\tolerance=1000
+\emergencystretch=0.74cm
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\pt}{\partial}
+\newcommand{\eps}{\epsilon}
+\newcommand{\vareps}{\varepsilon}
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\com}[1]{{\Large{\texttt{{\color{red}(#1)}}}}}
+
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+  \LARGE{\textbf{Электродинамика и теория относительности}}\\[1cm]
+  \Large{Дмитрий Соколов, Игорь Шендерович}\\[1cm]
+\end{center}
+
+\begin{abstract}
+  В рамках основных занятий по электродинамике мы будем изучать
+  основные свойства электрических и магнитных полей, и в особенности
+  их зависимость от времени (то есть, \textit{динамику} этих
+  полей). Уравнения, описывающие эту динамику, известны как
+  \textit{уравнения Максвелла} — они были получены Дж. Максвеллом во
+  второй половине XIX века. Кроме того, мы увидим, что логическое
+  продолжение этой деятельности приводит к появлению
+  \textit{специальной теории относительности}, сформулированной
+  Эйнштейном в 1905 году.
+\end{abstract}
+
+\begin{center}
+  \Large{\textbf{План занятий}}
+\end{center}
+
+\begin{enumerate}
+\item Напоминание об электростатике. Основные векторные операции.
+\item Метод изображений. Гидромеханическая аналогия.
+\item Движущиеся электрические заряды.
+\item Магнитное поле как следствие динамики. Неразличимость
+  электрического и магнитного поля. 
+\item Первое динамическое уравнение Максвелла. Задача о разрядке
+  конденсатора. 
+\item Электромагнитные волны.
+\item Закон индукции Фарадея: второе динамическое уравнение
+  Максвелла.
+\item Принцип относительности: сохранение формы уравнений Максвелла. 
+\item Преобразования Лоренца.
+\item Физические следствия преобразований Лоренца. 
+\end{enumerate}
+
+
+
+\end{document}
